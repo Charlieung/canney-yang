@@ -1,0 +1,75 @@
+---
+import PortfolioModal from './PortfolioModal.astro';
+
+const services = [
+    {
+        id: 1,
+        title: "Medical Massage",
+        subtitle: "Customized: $123",
+        image: "src/assets/img/portfolio/1.jpg",
+        description: "Have you know someone been in a motor vehicle accident (MVA)? Many of our clients have found massage therapy to be an effective treatment for pain and discomfort related to whiplash, lumbar trauma & injured from car accidents. The therapeutic massage modalities used may include manual therapy, massage treatment, myofascial release, neuromuscular re-education, hot or cold packs and stretching. No-Fault insurance will in most cases cover massage therapy for your injuries. Please call/text us @516-641-0818 or nofaultmedicalmassage@gmail.com to make an appointment.",
+        details: "Major insurances we accept are: Geico, State Farm, Allstate, Hartford, Safeco, Traveler, Connect, Esurance, Sedgwick, National General, Nationwide, etc."
+    },
+    {
+        id: 2,
+        title: "Therapeutic Massage",
+        subtitle: "60 Minutes: $168",
+        image: "src/assets/img/portfolio/2.jpg",
+        description: "Therapeutic Massage is a form of bodywork that aims to relieve tension in the deeper layers of tissue in the body. Therapeutic Massage is a highly effective method for releasing chronic stress areas due to misalignment, repetitive motions, and past lingering injuries. Due to the nature of the Therapeutic work, open communication during the session is crucial to make sure you don't get too uncomfortable. Keep in mind that soreness is pretty common after the treatment, and that plenty of water should be ingested to aid with the flushing and removal of toxins that will have been released from the Therapeutic during the session.",
+        details: ""
+    },
+    {
+        id: 3,
+        title: "Swedish Massage",
+        subtitle: "75 Minutes: $200",
+        image: "src/assets/img/portfolio/3.jpg",
+        description: "Swedish Massage is a very relaxing and therapeutic style of bodywork. It combines oils or lotion with an array of strokes such as rolling, kneading, and percussion to help the body improve its circulation. The benefits of this type of bodywork are wide-ranging and include relief from aches and pains, decreased stress levels in the body, enhanced mental clarity, improved appearance, and greater flexibility.",
+        details: ""
+    },
+    {
+        id: 4,
+        title: "Massage Packages",
+        subtitle: "60 Minutes: $130",
+        image: "src/assets/img/portfolio/4.jpg",
+        description: "$520(4 hours prepaid), people have stressed every day and the stresses are the silent killer, why don’t you treat yourself well and relax your body and mind? You can share the membership card for your family members. Enjoy these SPECIAL Therapeutic Treatments to decrease the stresses and cleared your mind.",
+        details: ""
+    }
+];
+---
+<section class="page-section bg-light" id="portfolio">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Services</h2>
+            <h3 class="section-subheading text-muted">I provide the following services</h3>
+        </div>
+        <div class="row">
+            {services.map(service => (
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href={`#portfolioModal${service.id}`}>
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src={service.image} alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">{service.title}</div>
+                            <div class="portfolio-caption-subheading text-muted">{service.subtitle}</div>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
+
+{services.map(service => (
+    <PortfolioModal
+        id={`portfolioModal${service.id}`}
+        title={service.title}
+        subtitle={service.subtitle}
+        image={service.image}
+        description={service.description}
+        details={service.details}
+    />
+))}

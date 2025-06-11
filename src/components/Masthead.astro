@@ -1,0 +1,16 @@
+---
+export interface Props {
+    subheading1: string;
+    subheading2: string;
+    buttonText: string;
+}
+
+const { subheading1, subheading2, buttonText } = Astro.props;
+---
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">{subheading1}</div>
+        <div class="masthead-subheading text-upper">{subheading2}</div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="#testimonials">{buttonText}</a>
+    </div>
+</header>

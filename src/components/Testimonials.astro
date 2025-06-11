@@ -1,0 +1,33 @@
+---
+const testimonials = [
+    {
+        quote: "I am a client at Yang’s massage therapy. I got injured from an accident. I wasn’t so sure how this works with no fault and what should I do to get the treatment etc. but Canney, the massage therapist is very knowledgeable about no fault insurance, she did everything for me and I only got my prescription from the dr. When it comes to massage, she is amazing and you walk out feels like a feather ! My week starts looking forward to go to her😊 you will love to go to her, and I highly recommend her",
+        author: "- Sona Y."
+    },
+    {
+        quote: "I got referral from my Neurologist for Accupuncture and massage therapy since MVA 2019, I heal better from their cupping, guasha, hot, cold stone therapy and stretching. I really appreciate Jack and Canney always provide the best treatments. I am glad I found them. I strongly recommend people who have mva cases or pain related issues, this is the right place to heal and feel better.",
+        author: "- Martin Q."
+    },
+    {
+        quote: "I am grateful and appreciate that Ms. Yang provide the cold+hot+cold method of marble stone therapy to help decreasing my muscle pain and strain since my neck surgery couple weeks ago, it’s amazing that cold stone really help to decrease the inflammation and increase circulation. I love this special Luxury treatment. I appreciate my spine specialist referred me to have medical massage.",
+        author: "- Jose P."
+    },
+    {
+        quote: "Canney is the best around. She is very knowledgeable, knows how to make her clients feel good, and has excellent technique. I came to her after a car accident, and she worked on helping me get better. Not only does she do massage therapy, but she also uses hot stones, cold stone therapy, cupping, and traditional Chinese technique guasha. She also included stretching in our sessions, which really helped me out. She uses hot towels to clean you off so your clothes dont get dirty! She also uses essential smelling oils. I would recommend her to anyone looking for a medical massage or even a regular massage.",
+        author: "- Amy P."
+    }
+].filter(t => t.quote && t.author); // Filter out empty testimonials
+---
+<section class="page-section" id="testimonials">
+    <div class="container">
+        <div class="text-center"><h2 class="section-heading text-uppercase">Testimonials</h2></div>
+        <div class="row text-center justify-content-center">
+            {testimonials.map(testimonial => (
+                <div class="col-md-4">
+                    <p class="text-muted">{testimonial.quote}</p>
+                    <h4 class="my-3 text-muted">{testimonial.author}</h4>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>

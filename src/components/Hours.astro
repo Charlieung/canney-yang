@@ -1,0 +1,39 @@
+---
+const schedule = [
+    { day: "Sunday", availability: "By Appointment Only" },
+    { day: "Monday", availability: "By Appointment Only" },
+    { day: "Tuesday", availability: "By Appointment Only" },
+    { day: "Wednesday", availability: "By Appointment Only" },
+    { day: "Thursday", availability: "By Appointment Only" },
+    { day: "Friday", availability: "By Appointment Only" },
+    { day: "Saturday", availability: "By Appointment Only" },
+]
+---
+<section class="page-section" id="hours">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Hours</h2>
+            <h3 class="section-subheading">Please set up an appointment via text 516-641-0818 or email nofaultmedicalmassage@gmail.com</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Availability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {schedule.map(item => (
+                            <tr>
+                                <td>{item.day}</td>
+                                <td>{item.availability}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
