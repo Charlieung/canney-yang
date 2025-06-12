@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+
+const testimonials = await getCollection('testimonials');
+---
+<section class="page-section" id="testimonials">
+    <div class="container">
+        <div class="text-center"><h2 class="section-heading text-uppercase">Testimonials</h2></div>
+        <div class="row text-center justify-content-center">
+            {testimonials.map(async (testimonial: any) => {
+                
+                const { Content } = await testimonial.render();
+
+                return (
+                    <div class="col-md-4">
+                        <div class="text-muted">
+                           <Content />
+                        </div>
+                        <h4 class="my-3 text-muted">- {testimonial.data.author}</h4>
+                    </div>
+                )
+            })}
+        </div>
+    </div>
+</section>
