@@ -29,23 +29,16 @@ const services = await getCollection('services');
                         </div>
                     </div>
                 </div>
+                <ServiceModal
+                    id={`serviceModal${service.data.id}`}
+                    title={service.data.title}
+                    subtitle={service.data.subtitle}
+                    image={service.data.image}
+                >
+                    <Content />
+                </ServiceModal>
             )
             })}
         </div>
     </div>
 </section>
-
-{services.map(async (service: any) => {
-    const { Content } = await service.render();
-    
-    return (
-        <ServiceModal
-            id={`serviceModal${service.data.id}`}
-            title={service.data.title}
-            subtitle={service.data.subtitle}
-            image={service.data.image}
-        >
-            <Content />
-        </ServiceModal>
-    )
-})}
