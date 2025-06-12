@@ -9,11 +9,11 @@ const testimonialsCollection = defineCollection({
 
 const servicesCollection = defineCollection({
   type: 'content',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     id: z.number(),
     title: z.string(),
     subtitle: z.string(),
-    image: z.string(), // Optional since not all services may have an image
+    image: image(),
   }),
 });
 

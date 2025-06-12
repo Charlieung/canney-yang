@@ -2,7 +2,7 @@
 id: 4
 title: "Massage Packages"
 subtitle: "60 Minutes: $130"
-image: "src/assets/img/service/4.jpg"
+image: "../../assets/img/service/4.jpg"
 ---
 
 $520(4 hours prepaid)
