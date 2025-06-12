@@ -21,7 +21,7 @@ const services = await getCollection('services');
                                 <div class="service-hover">
                                     <div class="service-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src={service.data.image} alt="..." />
+                                <img class="img-fluid" src={service.data.image} alt={service.data.title + " service illustration"} />
                             </a>
                             <div class="service-caption">
                                 <div class="service-caption-heading">{service.data.title}</div>
